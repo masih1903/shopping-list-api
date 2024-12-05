@@ -8,4 +8,4 @@ COPY target/app.jar /app.jar
 EXPOSE 7001
 
 # Command to run your app
-CMD ["java", "-jar", "/target/app.jar"]
+CMD ["java", "-jar", "/app.jar"]
