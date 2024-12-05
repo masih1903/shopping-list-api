@@ -8,6 +8,7 @@ import app.security.routes.SecurityRoutes;
 import app.utils.ApiProps;
 import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
+import io.javalin.http.Context;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
@@ -40,11 +41,28 @@ public class AppConfig {
         var app = io.javalin.Javalin.create(AppConfig::configuration);
         exceptionContext(app);
         app.beforeMatched(accessController::accessHandler);
+        app.before(AppConfig::corsHeaders);
+        app.options("/*", AppConfig::corsHeadersOptions);
         //app.error(404, ctx -> ctx.json("Resource not found"));
         app.start(ApiProps.PORT);
     }
 
     public static void stopServer(Javalin app) {
         app.stop();
+    }
+
+    private static void corsHeaders(Context ctx) {
+        ctx.header("Access-Control-Allow-Origin", "*");
+        ctx.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        ctx.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        ctx.header("Access-Control-Allow-Credentials", "true");
+    }
+
+    private static void corsHeadersOptions(Context ctx) {
+        ctx.header("Access-Control-Allow-Origin", "*");
+        ctx.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        ctx.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        ctx.header("Access-Control-Allow-Credentials", "true");
+        ctx.status(204);
     }
 }
