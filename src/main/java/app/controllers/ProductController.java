@@ -18,7 +18,6 @@ public class ProductController implements IController {
 
     @Override
     public void getById(Context ctx) {
-
         try {
             Integer id = Integer.parseInt(ctx.pathParam("id"));
             Product product = productDAO.getById(id);

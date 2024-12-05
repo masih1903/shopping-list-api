@@ -33,8 +33,6 @@ public class AppConfig {
 
         app.exception(ApiException.class, exceptionController::apiExceptionHandler);
         app.exception(Exception.class, exceptionController::exceptionHandler);
-
-
     }
 
     public static void startServer() {

@@ -15,17 +15,7 @@ public class ExceptionController {
     public void apiExceptionHandler(ApiException e, Context ctx) {
         log.error("STATUS: {}, MESSAGE: {}", e.getStatusCode(), e.getMessage());
         ctx.status(e.getStatusCode());
-
-        // Use switch expression to determine the message based on the status code
-        /* String userMessage = switch (e.getStatusCode()) {
-            case 404 -> "The requested resource could not be found.";
-            case 400 -> "Invalid request. Please check your input and try again.";
-            case 500 -> "An internal error occurred. Please try again later.";
-            default -> "An error occurred. Please try again.";
-        }; */
-
         ctx.json(new Message(e.getStatusCode(), e.getMessage(), e.getTimeStamp()));
-
     }
 
     public void exceptionHandler(Exception e, Context ctx) {
