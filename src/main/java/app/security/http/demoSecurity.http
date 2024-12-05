@@ -1,0 +1,42 @@
+### A simple get request to the test endpoint. No need for login
+GET {{URL}}/auth/test
+
+### Create a new user - this one will only get a USER role by default
+POST {{URL}}/auth/register
+
+{
+    "username": "admin",
+    "password": "masih330"
+}
+
+###
+POST {{URL}}/auth/login
+
+{
+    "username": "admin",
+    "password": "masih330"
+}
+
+> {% client.global.set("jwt_token", response.body.token); %}
+
+###
+GET {{URL}}/protected/user_demo
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+###
+GET {{URL}}/protected/admin_demo
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Add admin role to user
+POST {{URL}}/auth/user/addrole/
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+    "role": "admin"
+}
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+

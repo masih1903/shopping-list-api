@@ -1,0 +1,18 @@
+17:52:46.709 [JettyServerThreadPool-34] ERROR app.controllers.ExceptionController - STATUS: 403, MESSAGE: Cannot invoke "dk.bugelhartmann.UserDTO.getRoles()" because "user" is null, TYPE: class java.lang.NullPointerException
+17:53:40.465 [JettyServerThreadPool-32] ERROR app.controllers.ExceptionController - STATUS: 403, MESSAGE: Cannot invoke "dk.bugelhartmann.UserDTO.getRoles()" because "user" is null, TYPE: class java.lang.NullPointerException
+17:53:57.921 [JettyServerThreadPool-35] ERROR app.controllers.ExceptionController - STATUS: 403, MESSAGE: Cannot invoke "dk.bugelhartmann.UserDTO.getRoles()" because "user" is null, TYPE: class java.lang.NullPointerException
+17:57:24.153 [JettyServerThreadPool-33] ERROR app.controllers.ExceptionController - STATUS: 404, MESSAGE: Hotel with ID 5 not found
+17:58:54.502 [JettyServerThreadPool-44] ERROR app.controllers.ExceptionController - STATUS: 404, MESSAGE: Hotel with ID 9 not found
+17:59:23.417 [JettyServerThreadPool-44] ERROR app.controllers.ExceptionController - STATUS: 404, MESSAGE: Hotel with ID 9 not found
+17:59:30.236 [JettyServerThreadPool-30] ERROR app.controllers.ExceptionController - STATUS: 400, MESSAGE: Invalid ID format. Please provide a numeric ID.
+17:59:42.326 [JettyServerThreadPool-32] ERROR app.controllers.ExceptionController - STATUS: 200, MESSAGE: Cannot invoke "app.entities.Hotel.setName(String)" because "hotel" is null, TYPE: class java.lang.NullPointerException
+17:59:47.177 [JettyServerThreadPool-33] ERROR app.controllers.ExceptionController - STATUS: 400, MESSAGE: Invalid ID format. Please provide a numeric ID.
+18:00:01.982 [JettyServerThreadPool-35] ERROR app.controllers.ExceptionController - STATUS: 404, MESSAGE: Hotel with ID 9 not found
+18:00:07.934 [JettyServerThreadPool-36] ERROR app.controllers.ExceptionController - STATUS: 400, MESSAGE: Invalid ID format. Please provide a numeric ID.
+15:13:58.893 [JettyServerThreadPool-34] ERROR app.controllers.ExceptionController - STATUS: 404, MESSAGE: No products found.
+15:17:11.095 [JettyServerThreadPool-35] ERROR app.controllers.ExceptionController - STATUS: 404, MESSAGE: No products found.
+16:07:42.097 [JettyServerThreadPool-45] ERROR app.controllers.ExceptionController - STATUS: 200, MESSAGE: Cannot invoke "app.entities.Product.setName(String)" because "product" is null, TYPE: class java.lang.NullPointerException
+16:09:34.661 [JettyServerThreadPool-44] ERROR app.controllers.ExceptionController - STATUS: 404, MESSAGE: Product with ID 1 not found
+16:09:41.690 [JettyServerThreadPool-35] ERROR app.controllers.ExceptionController - STATUS: 200, MESSAGE: Cannot invoke "app.entities.Product.setName(String)" because "product" is null, TYPE: class java.lang.NullPointerException
+16:09:53.034 [JettyServerThreadPool-42] ERROR app.controllers.ExceptionController - STATUS: 404, MESSAGE: Product with ID 1 not found
+16:10:09.283 [JettyServerThreadPool-36] ERROR app.controllers.ExceptionController - STATUS: 404, MESSAGE: No products found.
