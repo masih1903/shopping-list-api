@@ -11,9 +11,7 @@ public class Routes {
     public EndpointGroup getApiRoutes() {
         return () ->
         {
-
             path("/products", productRoutes.getProductRoutes());
-
         };
     }
 }
