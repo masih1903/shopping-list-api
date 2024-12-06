@@ -36,9 +36,6 @@ public class ShoppingListController implements IController {
     @Override
     public void getAll(Context ctx) {
         List<ShoppingList> shoppingLists = shoppingListDAO.getAll();
-        if (shoppingLists.isEmpty()) {
-            throw new ApiException(404, "No shopping-lists found.");
-        }
         List<ShoppingListDTO> shoppingListDTOs = ShoppingListDTO.toShoppingListDTOList(shoppingLists);
         ctx.status(200).json(shoppingListDTOs, ShoppingListDTO.class);
 
@@ -51,7 +48,7 @@ public class ShoppingListController implements IController {
             ShoppingList shoppingList = shoppingListDAO.create(shoppingListDTO);
             ctx.status(201).json(new ShoppingListDTO(shoppingList));
         } catch (Exception e) {
-            throw new ApiException(500, "An error occurred while creating the trip. Please try again later.");
+            throw new ApiException(500, e.getMessage());
         }
 
     }

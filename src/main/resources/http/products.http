@@ -13,7 +13,7 @@ Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
 {
-  "name": "Slik"
+  "name": "Skyr"
 
 }
 
