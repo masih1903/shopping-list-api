@@ -1,6 +1,7 @@
 package app.config;
 
 import app.entities.Product;
+import app.entities.ShoppingList;
 import app.security.entities.User;
 import app.security.entities.Role;
 import app.utils.ApiProps;
@@ -129,6 +130,7 @@ public class HibernateConfig {
 
     private static void getAnnotationConfiguration(Configuration configuration) {
         configuration.addAnnotatedClass(Product.class);
+        configuration.addAnnotatedClass(ShoppingList.class);
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Role.class);
     }
