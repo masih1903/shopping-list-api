@@ -19,7 +19,7 @@ Authorization: Bearer {{jwt_token}}
 
 ###
 
-PUT {{URL}}/1
+PUT {{URL}}/5
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{jwt_token}}

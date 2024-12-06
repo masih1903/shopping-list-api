@@ -4,6 +4,7 @@ import app.dtos.ShoppingListDTO;
 import app.entities.ShoppingList;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityNotFoundException;
 
 import java.util.List;
 
@@ -45,6 +46,10 @@ public class ShoppingListDAO implements IDAO<ShoppingList, ShoppingListDTO> {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             ShoppingList shoppingList = em.find(ShoppingList.class, id);
+            if(shoppingList == null) {
+                throw new EntityNotFoundException("ShoppingList with ID " + id + " not found");
+
+            }
             shoppingList.setName(shoppingListDTO.getName());
             em.getTransaction().commit();
             return shoppingList;

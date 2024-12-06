@@ -7,6 +7,7 @@ import app.entities.Product;
 import app.entities.ShoppingList;
 import app.exceptions.ApiException;
 import io.javalin.http.Context;
+import jakarta.persistence.EntityNotFoundException;
 
 import java.util.List;
 
@@ -59,12 +60,11 @@ public class ShoppingListController implements IController {
             Integer id = Integer.parseInt(ctx.pathParam("id"));
             ShoppingListDTO shoppingListDTO = ctx.bodyAsClass(ShoppingListDTO.class);
             ShoppingList updatedShoppingList = shoppingListDAO.update(id, shoppingListDTO);
-            if (updatedShoppingList == null) {
-                throw new ApiException(404, "Shopping-list with ID " + id + " not found");
-            }
             ctx.status(200).json(updatedShoppingList, ShoppingListDTO.class);
         } catch (NumberFormatException e) {
             throw new ApiException(400, "Invalid ID format. Please provide a numeric ID.");
+        } catch (EntityNotFoundException e) {
+            throw new ApiException(404, e.getMessage());
         }
     }
 
