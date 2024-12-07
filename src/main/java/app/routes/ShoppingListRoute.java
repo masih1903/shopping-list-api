@@ -18,8 +18,8 @@ public class ShoppingListRoute {
         {
             get("/{id}", shoppingListController::getById, Role.ANYONE);
             get("/", shoppingListController::getAll, Role.ANYONE);
-            post("/", shoppingListController::create, Role.ANYONE);
-            put("/{id}", shoppingListController::update, Role.ANYONE);
+            post("/", shoppingListController::create, Role.ADMIN);
+            put("/{id}", shoppingListController::update, Role.ADMIN);
             delete("/{id}", shoppingListController::delete, Role.ANYONE);
 
         };
