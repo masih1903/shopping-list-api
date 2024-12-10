@@ -20,9 +20,9 @@ public class ProductRoute {
         {
             get("/{id}", productController::getById, Role.ANYONE);
             get("/", productController::getAll, Role.ANYONE);
-            post("/", productController::create, Role.ANYONE);
-            put("/{id}", productController::update, Role.ANYONE);
-            delete("/{id}", productController::delete, Role.ANYONE);
+            post("/", productController::create, Role.ADMIN);
+            put("/{id}", productController::update, Role.ADMIN);
+            delete("/{id}", productController::delete, Role.ADMIN);
 
         };
     }
