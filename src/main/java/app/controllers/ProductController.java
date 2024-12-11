@@ -35,9 +35,6 @@ public class ProductController implements IController {
     @Override
     public void getAll(Context ctx) {
         List<Product> products = productDAO.getAll();
-        if (products.isEmpty()) {
-            throw new ApiException(404, "No products found.");
-        }
         List<ProductDTO> productDTOs = ProductDTO.toProductDTOList(products);
         ctx.status(200).json(productDTOs, ProductDTO.class);
     }

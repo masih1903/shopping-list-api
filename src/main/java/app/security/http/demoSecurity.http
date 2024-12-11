@@ -5,16 +5,16 @@ GET {{URL}}/auth/test
 POST {{URL}}/auth/register
 
 {
-    "username": "masih",
-    "password": "masih330"
+    "username": "user",
+    "password": "test123"
 }
 
 ###
 POST {{URL}}/auth/login
 
 {
-    "username": "masih",
-    "password": "masih330"
+    "username": "user",
+    "password": "test123"
 }
 
 > {% client.global.set("jwt_token", response.body.token); %}
